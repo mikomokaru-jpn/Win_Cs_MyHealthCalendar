@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ButtonItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CalendarForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DayItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="EntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NumberButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ValueField.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
