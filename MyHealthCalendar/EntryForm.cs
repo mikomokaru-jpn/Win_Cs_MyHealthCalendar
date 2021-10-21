@@ -27,7 +27,7 @@ namespace MyHealthCalendar
         };
         public ValueField lowerValue = new ValueField()
         {
-            Location = new Point(10, 110),
+            Location = new Point(10, 115),
         };
         //確定チェックボックス
         public CheckBox confirm = new CheckBox()
@@ -52,6 +52,24 @@ namespace MyHealthCalendar
             //血圧表示フィールド
             this.Controls.Add(upperValue);
             this.Controls.Add(lowerValue);
+
+            var upperMidashi = new Label
+            {
+                Location = new Point(10, 45),
+                AutoSize = true,
+                Text = "最高血圧",
+            };
+            upperMidashi.Font = new Font(upperMidashi.Font.FontFamily, 9);
+            this.Controls.Add(upperMidashi);
+
+            var lowerMidashi = new Label
+            {
+                Location = new Point(10, 95),
+                AutoSize = true,
+                Text = "最低血圧",
+            };
+            lowerMidashi.Font = new Font(lowerMidashi.Font.FontFamily, 9);
+            this.Controls.Add(lowerMidashi);
 
             //確定チェックボックス
             this.Controls.Add(confirm);
@@ -148,6 +166,9 @@ namespace MyHealthCalendar
                 lowerValue.Text = 0.ToString();
                 confirm.Checked = false;
             }
+            this.ActiveControl = upperValue;
+            //upperValue.Select(upperValue.Text.Length, 0);
+
         }
 
         void update_Click(object sender, EventArgs e)

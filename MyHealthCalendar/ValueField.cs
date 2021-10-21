@@ -22,13 +22,12 @@ namespace MyHealthCalendar
         //一文字入力後
         protected override void OnTextChanged(EventArgs e)
         {
-            //base.OnTextChanged(e);
             if (this.Text.Length > 0)
-            {
+            {   //値の設定
                 this.Text = int.Parse(this.Text).ToString();
             }
             else
-            {
+            {   //値なしはゼロとする
                 this.Text = 0.ToString();
             }
             this.Select(this.Text.Length, 0);
@@ -37,18 +36,20 @@ namespace MyHealthCalendar
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
-            {
+            {   //ニューメリックチェック
                 e.Handled = true;
                 return;
             }
             if (this.Text.Length >= 3 && e.KeyChar != '\b')
-            {
+            {   //3文字あるときは次の入力不可。ただしバックスペースは除く。　
                 e.Handled = true;
                 return;
             }
-
         }
-
-
+        //フォーカス
+        protected override void OnGotFocus(EventArgs e)
+        {
+            this.Select(this.Text.Length, 0);
+        }
     }
 }
