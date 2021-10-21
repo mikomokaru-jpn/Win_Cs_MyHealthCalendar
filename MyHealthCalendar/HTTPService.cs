@@ -22,13 +22,21 @@ namespace MyHealthCalendar
             var param = String.Format("id=500&from_date={0}&to_date={1}",
                                       fromYMD.ToString(), toYMD.ToString());
             var jsonString = postRequest(url_r10, param);
-            return JsonSerializer.Deserialize<List<Dictionary<string, int>>>(jsonString);
+            try
+            {
+                return JsonSerializer.Deserialize<List<Dictionary<string, int>>>(jsonString);
+            }catch(System.Text.Json.JsonException e)
+            {
+                Debug.Print(e.ToString());
+                return new List<Dictionary<string, int>>();
+            }
         }
         //日付指定の血圧データ取得
         public static List<Dictionary<string, int>> bpRecord(int YMD)
         {
             var param = String.Format("id=500&date={0}", YMD.ToString());
             var jsonString = postRequest(url_r20, param);
+
             var list = JsonSerializer.Deserialize<List<Dictionary<string, int>>>(jsonString);
             return list;
         }
