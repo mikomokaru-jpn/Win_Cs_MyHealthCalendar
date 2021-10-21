@@ -1,8 +1,7 @@
 ## Blood pressure management calendar
 
 for Windows created with C#
-
-Windows 10 / Visual Stadio Community 2019 / .net 5.0
+  Windows 10 / Visual Stadio Community 2019 / .net 5.0
 
 Input your blood presurre value for health managemnt. When you double-click on a date, blood pressure input form appears. A red mark is displayed on the day at blood pressure is registered.
 
